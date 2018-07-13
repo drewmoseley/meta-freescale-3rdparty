@@ -4,6 +4,7 @@ require recipes-kernel/linux/linux-imx.inc
 SUMMARY = "Linux kernel for Toradex Colibri VFxx Computer on Modules"
 
 SRC_URI = "git://git.toradex.com/linux-toradex.git;protocol=git;branch=${SRCBRANCH} \
+           file://0001-Fix-compilation-with-gcc-8.patch \
            file://defconfig"
 
 KERNEL_MODULE_AUTOLOAD += "${@bb.utils.contains('COMBINED_FEATURES', 'usbgadget', ' libcomposite', '',d)}"
